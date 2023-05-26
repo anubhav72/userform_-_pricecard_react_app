@@ -19,8 +19,8 @@ const SignUp = () => {
   const emailRegExp = "^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$";
   const myValidation = Yup.object().shape({
     username: Yup.string()
-      .min(3, "UserName Must Five Letter")
-      .max(20, "Too Long!")
+      .min(1, "UserName Must Five Letter")
+      .max(40, "Too Long!")
       .required("UserName Required"),
     email: Yup.string()
       .matches(emailRegExp, "Email Invalid")
@@ -32,7 +32,7 @@ const SignUp = () => {
       .required("Phone No Required"),
     password: Yup.string()
       .min(6, "password must be 6 char !")
-      .max(16, "only 16 char ! ")
+      .max(12, "only 12 char ! ")
       .matches(
         passRegExp,
         "Include a number ! At least one upper case ! letter Include a symbol !"
